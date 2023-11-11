@@ -1,0 +1,3 @@
+title,type,text,required
+Forma de pago,radio,"Efectivo,Tarjeta Bancard o QR",TRUE
+Dirección de envío,text,,FALSE
