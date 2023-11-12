@@ -24,7 +24,7 @@ export function getCartItemOptionsSummary(options: CartItem["options"]): string 
 }
 
 export function getCartMessage(cart: Cart, checkout: Checkout): string {
-  const bienvenida = `Hola Estas Boludeces, quiero hacer el siguiente pedido:\n`;
+  const bienvenida = `*Hola Estas Boludeces, quiero hacer el pedido de:*`;
   const items = Array.from(cart.values())
     .map(
       (item) =>
@@ -38,7 +38,8 @@ export function getCartMessage(cart: Cart, checkout: Checkout): string {
   const fields = Array.from(checkout.entries())
     .map(([key, value]) => `* ${key}: ${value}`)
     .join("\n");
-  const total = `Total: ${parseCurrency(getCartTotal(cart))}`;
+    const total = `Total: ${parseCurrency(getCartTotal(cart))}`;
+    const powered = `Desarrollado por BedenkerLabs. Muchas gracias 😎`;
 
-  return [bienvenida, items, fields, total].join("\n\n");
+  return [bienvenida, items, fields, total, powered].join("\n\n");
 }
