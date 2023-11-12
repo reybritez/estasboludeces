@@ -24,6 +24,7 @@ export function getCartItemOptionsSummary(options: CartItem["options"]): string 
 }
 
 export function getCartMessage(cart: Cart, checkout: Checkout): string {
+  const bienvenida = `Hola Estas Boludeces, quiero hacer el siguiente pedido:\n`;
   const items = Array.from(cart.values())
     .map(
       (item) =>
@@ -39,5 +40,5 @@ export function getCartMessage(cart: Cart, checkout: Checkout): string {
     .join("\n");
   const total = `Total: ${parseCurrency(getCartTotal(cart))}`;
 
-  return [items, fields, total].join("\n\n");
+  return [bienvenida, items, fields, total].join("\n\n");
 }

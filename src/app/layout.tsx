@@ -91,7 +91,7 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
                 >
                   goncy
                 </a>
-                . Implementado por 
+                . Implementado por  
                 <a
                   className="underline"
                   href="https://instagram.com/bedenkerlabs"
